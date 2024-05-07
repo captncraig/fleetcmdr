@@ -1,0 +1,13 @@
+// matchers: os="linux"
+// This config applies to all linux hosts
+
+argument "prometheus_receiver" {
+		optional = true
+}
+
+prometheus.exporter.unix "node_exporter" { }
+
+prometheus.scrape "demo" {
+  targets    = prometheus.exporter.unix.node_exporter.targets
+  forward_to = [argument.prometheus_receiver.value]
+}

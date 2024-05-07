@@ -36,7 +36,6 @@ func (m *mytransport) RoundTrip(req *http.Request) (*http.Response, error) {
 }
 
 func main() {
-
 	flag.Parse()
 	pipes, err := loadPipelinesFromFiles()
 	if err != nil {
