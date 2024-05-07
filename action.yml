@@ -14,3 +14,7 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    FLEET_MANAGEMENT_HOST: ${{ inputs.host }}
+    FLEET_MANAGEMENT_USER: ${{ inputs.user }}
+    FLEET_MANAGEMENT_TOKEN: ${{ inputs.token }}
