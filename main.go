@@ -46,7 +46,10 @@ func main() {
 	host := os.Getenv("FLEET_MANAGEMENT_HOST")
 	user := os.Getenv("FLEET_MANAGEMENT_USER")
 	token := os.Getenv("FLEET_MANAGEMENT_TOKEN")
-	log.Println(host, user, token)
+	if host == "" || user == "" {
+		log.Fatal("FLEET_MANAGEMENT_HOST and FLEET_MANAGEMENT_USER are required")
+	}
+
 	hclient := &http.Client{
 		Transport: &mytransport{
 			username: user,

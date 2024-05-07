@@ -1,0 +1,16 @@
+# action.yml
+name: 'FleetCmdr'
+description: 'Upload alloy condigs'
+inputs:
+  host:
+    description: 'fleet management endpoint'
+    required: true
+  user:
+    description: 'fleet management username'
+    required: true
+  token:
+    description: 'fleet management token'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
