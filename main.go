@@ -19,7 +19,7 @@ import (
 	"github.com/grafana/alloy-remote-config/api/gen/proto/go/pipeline/v1/pipelinev1connect"
 )
 
-var flagDir = flag.String("d", "examples", "Directory to look for pipeline files")
+var flagDir = flag.String("d", ".", "Directory to look for pipeline files")
 var flagPurge = flag.Bool("purge", false, "If set, delete any remote pipelines not found locally")
 
 // todo:
