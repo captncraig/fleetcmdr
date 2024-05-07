@@ -11,12 +11,6 @@ inputs:
   token:
     description: 'fleet management token'
     required: true
-  dir:
-    description: 'Directory to sync'
-    required: false
-    default: '/github/workspace'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - -d ${{ inputs.dir }}
